@@ -5,13 +5,16 @@ window.onload = function() {
     let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
 
     function generateExcuse() {
-        let whoIndex = Math.floor(Math.random() * who.length);
-        let actionIndex = Math.floor(Math.random() * action.length);
-        let whatIndex = Math.floor(Math.random() * what.length);
-        let whenIndex = Math.floor(Math.random() * when.length);
+        let elements = [who, action, what, when];
+        let excuseArray = [];
 
-        return who[whoIndex] + ' ' + action[actionIndex] + ' ' + what[whatIndex] + ' ' + when[whenIndex];
+        for (let i = 0; i < elements.length; i++) {
+            let index = Math.floor(Math.random() * elements[i].length);
+            excuseArray.push(elements[i][index]);
+        }
+
+        return excuseArray.join(' ');
     }
 
-    document.getElementById('excuse').innerHTML = generateExcuse();
+    document.getElementById('excuse').innerHTML = `<i class="fas fa-comment-dots"></i> ${generateExcuse()}`;
 };
