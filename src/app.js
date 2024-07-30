@@ -18,3 +18,4 @@ window.onload = function() {
 
     document.getElementById('excuse').innerHTML = `<i class="fas fa-comment-dots"></i> ${generateExcuse()}`;
 };
+
